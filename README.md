@@ -1,1 +1,1 @@
-# bandcamp-clone
+# react-redux-auth-template
