@@ -3,6 +3,27 @@ BandAid is a unique take on the popular website BandCamp built using React/Redux
 
 BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/  
 
+## Technologies Used
+
+#### Front End
+
+1. Node.js (https://nodejs.org/)
+1. React (https://reactjs.org/)
+1. React-Router (https://reactrouter.com/)
+1. Redux (https://redux.js.org/)
+1. PureCSS (https://purecss.io/)
+
+#### MiddleWare
+
+1. Express-Validator (https://express-validator.github.io/docs/)
+1. JSON Web Token (https://jwt.io/)
+
+#### Back End 
+
+1. Express JS (https://expressjs.com/)
+1. PostgresQL (https://www.postgresql.org/)
+1. Sequelize (https://sequelize.org/master/)
+
 ## Local Environment Setup
 
 The following are instructions for setting the project up to run locally on Windows WSL2.
