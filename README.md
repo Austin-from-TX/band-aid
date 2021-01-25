@@ -1,5 +1,5 @@
 # band-aid
-BandAid is a unique take on the popular website [BandCamp](https://bandcamp.com) built using React/Redux front end technologies with an Express server backend.  It will allow users to sign up as an artist and upload music to be streamed onsite.  
+BandAid is a unique take on the popular [BandCamp](https://bandcamp.com) web app. BandAid users will be able to login and share audio files that will be available for live streaming by other users. More information will be provided in this wiki throughout project development. 
 
 BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/  
 
