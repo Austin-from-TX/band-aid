@@ -7,16 +7,16 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 
 #### Front End
 
-1. Node.js (https://nodejs.org/)
-1. React (https://reactjs.org/)
-1. React-Router (https://reactrouter.com/)
-1. Redux (https://redux.js.org/)
-1. PureCSS (https://purecss.io/)
+1. [Node.js](https://nodejs.org/)
+1. [React](https://reactjs.org/)
+1. [React-Router](https://reactrouter.com/)
+1. [Redux](https://redux.js.org/)
+1. [PureCSS](https://purecss.io/)
 
 #### MiddleWare
 
-1. Express-Validator (https://express-validator.github.io/docs/)
-1. JSON Web Token (https://jwt.io/)
+1. [Express-Validator](https://express-validator.github.io/docs/)
+1. [JSON Web Token](https://jwt.io/)
 
 #### Back End 
 
