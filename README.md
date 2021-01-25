@@ -20,9 +20,9 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 
 #### Back End 
 
-1. Express JS (https://expressjs.com/)
-1. PostgresQL (https://www.postgresql.org/)
-1. Sequelize (https://sequelize.org/master/)
+1. [Express JS](https://expressjs.com/)
+1. [PostgresQL](https://www.postgresql.org/)
+1. [Sequelize](https://sequelize.org/master/)
 
 ## Local Environment Setup
 
