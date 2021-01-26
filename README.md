@@ -17,6 +17,7 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 
 1. [Express-Validator](https://express-validator.github.io/docs/)
 1. [JSON Web Token](https://jwt.io/)
+1. [AWS S3](https://s3.console.aws.amazon.com/)
 
 #### Back End 
 
