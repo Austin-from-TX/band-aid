@@ -1,6 +1,7 @@
 import SignupFormPage from './index'
 import { Modal } from '../../context/Modal'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 function SignupModal () {
 
@@ -8,12 +9,11 @@ function SignupModal () {
 
     return (
         <>
-        <button onClick={() => setShowModal(true)}>Sign Up</button>
-        {showModal && ( 
+        <a href="/signup"  onClick={() => setShowModal(true)}>Sign Up</a>
+        {showModal && (  
           <Modal onClose={() => setShowModal(false)}>
               <SignupFormPage />
-          </Modal>
-        )}
+          </Modal>)}
         </>
     )
 }

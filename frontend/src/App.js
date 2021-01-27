@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormModal";
-import LoginForm from "./components/LoginFormModal/LoginForm";
-import Navigation from "./components/Navigation";
-import SignupFormPage from "./components/SignupForm";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
 import * as sessionActions from "./store/session";
+import M from 'materialize-css/dist/js/materialize.min.js';
+import Mp3Recorder from "./components/MP3Recorder";
 
 function App() {
   const dispatch = useDispatch()
@@ -14,20 +15,12 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true))
   }, [dispatch])
 
-
-  
+ 
   return isLoaded && (
   <>
-    <Navigation isLoaded={isLoaded}/>
-    
-    {isLoaded && (
-    <Switch>
-      
-      <Route path='/signup'>
-        <SignupFormPage />
-      </Route>
-    </Switch>
-    )}
+    <NavBar isLoaded={isLoaded} />
+    <Home />
+    <Mp3Recorder /> 
   </>
   );
 }

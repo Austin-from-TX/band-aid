@@ -24,12 +24,20 @@ function Navigation ({ isLoaded }) {
     }
 
     return (
-        <ul>
-            <li>
-              <NavLink exact to='/'>Home</NavLink>
-              {isLoaded && sessionLinks}
-            </li>   
-        </ul>
+        <div className='pure-menu pure-menu-horizontal pure-menu-scrollable' id='navbar'>
+            <ul className="pure-menu-list" id='navbar-list'>
+                <div className='left-links'>
+                <li className="pure-menu-item pure-menu-selected"><NavLink exact to='/' className="pure-menu-link">Home</NavLink></li> 
+                </div>
+                <div className='right-links'>
+                {sessionUser ? (<li className="pure-menu-item pure-menu-selected">  <ProfileButton user={sessionUser} /></li>) :
+                (<>
+                <li className="pure-menu-item pure-menu-selected"><LoginFormModal /></li>
+                <li className="pure-menu-item pure-menu-selected">  <SignupModal /></li>
+                </>)}
+                </div> 
+            </ul>
+        </div>
     )
 }
 

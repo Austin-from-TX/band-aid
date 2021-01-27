@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import './index.css';
+import 'materialize-css/dist/css/materialize.min.css'
 import configureStore from './store';
 import { restoreCSRF, fetch } from './store/csrf';
 import * as sessionActions from './store/session'

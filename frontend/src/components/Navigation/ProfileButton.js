@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
+import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
+import * as M from 'materialize-css'
 
 function ProfileButton({ user }) {
 
@@ -25,26 +27,30 @@ function ProfileButton({ user }) {
 
     }, [showMenu])
 
+    
+   
     const logout = (e) => {
         e.preventDefault()
         dispatch(sessionActions.logout())
     }
 
+    
+
     return (
-        <>
-          <button onClick={openMenu}>
-            <i class="fas fa-user"></i>
-          </button>
-          {showMenu && (
-              <ul className='profile-dropdown'>
-                  <li>{user.username}</li>
-                  <li>{user.email}</li>
-                  <li>
-                      <button onClick={logout}>Log Out</button>
-                  </li>
-              </ul>
-          )}
-        </>
+      <>   
+          <ul>
+            <li>
+                <a className='col s2' href={`/users/${user.username}`}>{user.username}</a>
+            </li>
+            <li>
+                <a> <i className="fas fa-user"></i> </a>
+            </li>
+            <li>
+                <a className='blue-grey darken-2 white-text' href='#' onClick={logout}>Log Out
+                </a>
+            </li>
+          </ul>
+      </>
     )
 }
 

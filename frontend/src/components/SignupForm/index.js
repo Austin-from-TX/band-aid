@@ -27,47 +27,46 @@ function SignupFormPage() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='pure-form-stacked' onSubmit={handleSubmit}>
+            <fieldset>
+            <legend>Sign Up</legend>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-            <label>
-                Email
                 <input
+                    className='pure-input-2-3'
                     type='text'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    placeholder="Email"
                     required
                 ></input>
-            </label>
-            <label>
-                Username
                 <input
+                    className='pure-input-2-3'
                     type='text'
                     value={username}
                     onChange={e => setUsername(e.target.value)}
+                    placeholder="Username"
                     required
                 ></input>
-            </label>
-            <label>
-                Password
                 <input
+                    className='pure-input-2-3'
                     type='password'
                     value={password}
                     onChange={e => setPassword(e.target.value)}
+                    placeholder="Password"
                     required
                 ></input>
-            </label>
-            <label>
-                Confirm Password
                  <input
+                    className='pure-input-2-3'
                     type='password'
                     value={confirmPassword}
                     onChange={e => setConfirmPassword(e.target.value)}
+                    placeholder="Confirm Password"
                     required
                 ></input>
-            </label>
-            <button type='submit'>Sign Up</button>
+            <button type='submit' className='pure-button pure-button-primary pure-button-active'>Sign Up</button>
+            </fieldset>
         </form>
     )
 }

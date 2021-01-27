@@ -23,30 +23,32 @@ function LoginForm() {
   };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='pure-form pure-form-stacked' id='form' onSubmit={handleSubmit}>
+          <fieldset>
+            <legend>Login</legend>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-            <label>
-                Username or Email            
+            </ul>         
                 <input
+                className='pure-input-2-3'
                 type='text'
                 value={credential}
                 onChange={e => setCredential(e.target.value)}
+                placeholder='Username or Email'
                 required
                 >
             </input>
-            </label>
-            <label>
                 <input
+                className='pure-input-2-3'
                 type='password'
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                placeholder='Password'
                 required
                 >
                 </input>
-            </label>
-            <button type='submit'>Log In</button>
+            <button type='submit' className='pure-button pure-button-primary pure-button-active'>Log In</button>
+            </fieldset>
         </form>
     )
 }
