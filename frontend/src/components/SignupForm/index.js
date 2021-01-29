@@ -65,7 +65,7 @@ function SignupFormPage() {
                     placeholder="Confirm Password"
                     required
                 ></input>
-            <button type='submit' className='pure-button pure-button-primary pure-button-active'>Sign Up</button>
+            <button type='submit'>Sign Up</button>
             </fieldset>
         </form>
     )

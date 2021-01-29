@@ -1,7 +1,7 @@
 import SignupFormPage from './index'
 import { Modal } from '../../context/Modal'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+
 
 function SignupModal () {
 

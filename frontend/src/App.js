@@ -1,26 +1,37 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
 import * as sessionActions from "./store/session";
-import M from 'materialize-css/dist/js/materialize.min.js';
-import Mp3Recorder from "./components/MP3Recorder";
+import UserProfile from './components/UserProfile'
+import Footer from "./components/Footer";
+import { Switch, Route } from "react-router-dom";
+
 
 function App() {
   const dispatch = useDispatch()
+  const sessionUser = useSelector(state => state.session.user)
   const [isLoaded, setIsLoaded] = useState(false)
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true))
   }, [dispatch])
 
- 
   return isLoaded && (
   <>
     <NavBar isLoaded={isLoaded} />
-    <Home />
-    <Mp3Recorder /> 
+    
+    <Switch>
+      <Route exact path={'/'}>
+        <Home />
+      </Route>
+    <Route path={`/users/:userId`}>
+      <UserProfile />
+    </Route>
+    
+    </Switch>
+    <Footer />
   </>
   );
 }

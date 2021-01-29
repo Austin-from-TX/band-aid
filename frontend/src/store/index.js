@@ -1,6 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from './session'
+import uploadReducer from './upload'
+import tracksReducer from './tracks'
 
 
 
@@ -18,6 +20,8 @@ if (process.env.NODE_ENV === "production") {
 const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
+  upload: uploadReducer,
+  tracks: tracksReducer
 });
 
 const configureStore = (preloadedState) => {
