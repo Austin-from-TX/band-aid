@@ -1,17 +1,19 @@
 import M from 'materialize-css/dist/js/materialize.min.js'
 import { useEffect } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import * as trackActions from '../store/tracks'
 
 function Tracks() {
     const dispatch = useDispatch()
-    const user = useSelector(state => state.session.user)
+    const userId = useSelector(state => state.session.user.id)
     const tracks = useSelector((state) => Object.values(state.tracks))
 
     useEffect(() => {
-        dispatch(trackActions.getAllTracks())
+        dispatch(trackActions.getAllTracks(userId))
     }, [dispatch])
-
+    
+    
     return (
         <>
             <h3> Your Tracks </h3>

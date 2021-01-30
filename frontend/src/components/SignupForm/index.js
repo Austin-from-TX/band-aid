@@ -14,7 +14,7 @@ function SignupFormPage() {
 
     if (sessionUser) return <Redirect to='/' />
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (password === confirmPassword) {
             setErrors([])
@@ -27,7 +27,8 @@ function SignupFormPage() {
     }
 
     return (
-        <form className='pure-form-stacked' onSubmit={handleSubmit}>
+       <div className="row">
+       <form className='pure-form-stacked col s12' onSubmit={handleSubmit}>
             <fieldset>
             <legend>Sign Up</legend>
             <ul>
@@ -65,9 +66,10 @@ function SignupFormPage() {
                     placeholder="Confirm Password"
                     required
                 ></input>
-            <button type='submit'>Sign Up</button>
+            <button type='submit' className='btn btn-header cyan darken-4 modal-trigger text-lighten-5'>Sign Up</button>
             </fieldset>
         </form>
+    </div>
     )
 }
 

@@ -14,21 +14,19 @@ function LoginForm() {
     const history = useHistory()
 
    
-    if (user) return <Redirect to="/" />;
-  const handleSubmit = (e) => {
+    if (user) return <Redirect to='/' />;
+  const handleSubmit =  async (e) => {
     e.preventDefault();
     setErrors([]);
-    dispatch(login({ credential, password })).catch((res) => {
+    const user = await dispatch(login({ credential, password })).catch((res) => {
       if (res.data && res.data.errors) setErrors(res.data.errors);
     });
-    if (!errors.length) {
-      const userId = useSelector(state => state.session.user.id)
-      history.push(`/users/${userId}`)
-    }
+    if (user) history.push(`/users/${user.id}`)
   };
 
     return (
-        <form className='pure-form pure-form-stacked' id='form' onSubmit={handleSubmit}>
+      <div className='row'>
+        <form className='pure-form-stacked col s12' id='form' onSubmit={handleSubmit}>
           <fieldset>
             <legend>Login</legend>
             <ul>
@@ -52,9 +50,10 @@ function LoginForm() {
                 required
                 >
                 </input>
-            <button type='submit' className='pure-button pure-button-primary pure-button-active'>Log In</button>
+            <button type='submit' className='btn btn-header cyan darken-4 modal-trigger text-lighten-5'>Log In</button>
             </fieldset>
         </form>
+      </div>
     )
 }
 

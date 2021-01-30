@@ -9,7 +9,7 @@ function SignupModal () {
 
     return (
         <>
-        <a href="/signup"  onClick={() => setShowModal(true)}>Sign Up</a>
+        <a href="#"  onClick={() => setShowModal(true)}>Sign Up</a>
         {showModal && (  
           <Modal onClose={() => setShowModal(false)}>
               <SignupFormPage />

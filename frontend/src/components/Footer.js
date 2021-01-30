@@ -2,10 +2,6 @@ function Footer() {
     return (
       <footer className='page-footer grey lighten-2'>
         <div className='row'>
-          <p className='para center black-text'>
-            This app was built as a student project under AppAcademy's Full Stack Web Development Program <br /> 
-            The technology stack used for this project includes:
-          </p>
           <h6 className='font center black-text'>
               React | Redux | NodeJS | PostgresQL | Materialize CSS
           </h6>

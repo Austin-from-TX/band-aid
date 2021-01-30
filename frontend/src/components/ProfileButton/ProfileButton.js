@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import * as M from 'materialize-css'
 
 function ProfileButton({ user }) {
-
+    const history = useHistory()
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false)
 
@@ -29,9 +29,10 @@ function ProfileButton({ user }) {
 
     
    
-    const logout = (e) => {
+    const logout = async (e) => {
         e.preventDefault()
-        dispatch(sessionActions.logout())
+        const user = await dispatch(sessionActions.logout())
+        if (!user) history.push('/')
     }
 
     
@@ -39,8 +40,14 @@ function ProfileButton({ user }) {
     return (
       <>   
           <ul>
+              <li>
+                  <a href='Upload Track'>Upload Track</a>
+              </li>
+              <li>
+                  <a href='Find Users'>Find BandMates</a>
+              </li>
             <li>
-                <a className='col s2' href={`/users/${user.username}`}>{user.username}</a>
+                <a className='col s2' href={`/users/${user.id}`}>{user.username}</a>
             </li>
             <li>
                 <a> <i className="fas fa-user arrow_drop_down"></i></a>

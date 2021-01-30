@@ -14,10 +14,10 @@ function Header() {
   
     return (
       <div className='row'>
-        <div className='col s12 m6'>
-          <img className='responsive-img' src={bg} alt='band_img' />
+        <div className='col s6 m6'>
+          <img className='responsive-img' src={bg} alt='band_img' style={{height: '500px'}} />
         </div>
-        <div className='col s12 m6'>
+        <div className='col s6 m6 '>
           <h4 className='font'>
             <b>Rehearse Online</b>
           </h4>
@@ -40,8 +40,7 @@ function Header() {
             <SignupModal />
           </a>
         </div>
-
-      
+             
     </div>
     );
   }

@@ -26,7 +26,7 @@ export const login = (user) => async (dispatch) => {
         }),
     })
     dispatch(setUser(response.data.user))
-    return response
+    return response.data.user
 }
 
 export const restoreUser = () => async (dispatch) => {
@@ -54,7 +54,7 @@ export const logout = () => async (dispatch) => {
         method: 'DELETE',
      })
      dispatch(removeUser())
-     return response
+     return response.data.user
 }
 
 const initialState = { user: null }
