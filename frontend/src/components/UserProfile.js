@@ -4,6 +4,7 @@ import Tracks from './Tracks'
 import {useSelector} from 'react-redux'
 import TrackPlayer from './TrackPlayer';
 import { Redirect } from 'react-router-dom'
+import Mp3Recorder from './MP3Recorder';
 
 function UserProfile(){
 
@@ -15,6 +16,7 @@ function UserProfile(){
             <Banner />
             <TrackPlayer />
             <Tracks />
+            <Mp3Recorder />
             
         </div>
     )

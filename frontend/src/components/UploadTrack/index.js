@@ -17,7 +17,6 @@ const  UploadTrack = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         let newErrors = []
-        console.log('HandleSubmit ----', userId)
         dispatch(createTrack({ bandName, userId, title, track,  }))
         .then(() => {
           setBandName("");

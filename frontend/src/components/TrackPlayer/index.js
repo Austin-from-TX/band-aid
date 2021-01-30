@@ -12,7 +12,7 @@ function TrackPlayer () {
         { name: track.title, musicSrc : track.source}
     ))
 
-    console.log('playlist ----', playlist)
+
 
     // const [audioList, setAudioList] = useState(playlist)
    
