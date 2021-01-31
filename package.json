@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Austin-from-TX/react-redux-auth-template#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "materialize-css": "^1.0.0-rc.2"
   }
 }

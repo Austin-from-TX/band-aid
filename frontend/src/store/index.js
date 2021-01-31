@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import sessionReducer from './session'
 import uploadReducer from './upload'
 import tracksReducer from './tracks'
+import usersReducer from './users'
 
 
 
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
   upload: uploadReducer,
-  tracks: tracksReducer
+  tracks: tracksReducer,
+  users: usersReducer
 });
 
 const configureStore = (preloadedState) => {

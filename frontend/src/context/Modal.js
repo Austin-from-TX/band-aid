@@ -40,4 +40,3 @@ export function Modal({ onClose, children }) {
         modalNode
     )
 }
-

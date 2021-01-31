@@ -87,7 +87,8 @@ User.signup = async function ({ username, email, password }) {
 };
 
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.Track, { foreignKey: 'userId'})
+    User.hasMany(models.Feedback, { foreignKey: 'userId'})
   };
   return User;
 };

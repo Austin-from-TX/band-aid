@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom";
+import  UploadModal  from '../UploadTrack/UploadModal.js'
 import * as sessionActions from '../../store/session';
 import * as M from 'materialize-css'
+import SearchUsers from "../SearchUsers.js";
 
 function ProfileButton({ user }) {
     const history = useHistory()
@@ -41,10 +43,10 @@ function ProfileButton({ user }) {
       <>   
           <ul>
               <li>
-                  <a href='Upload Track'>Upload Track</a>
+                 <UploadModal />
               </li>
               <li>
-                  <a href='Find Users'>Find BandMates</a>
+                <a href="/users">Find BandMates</a>
               </li>
             <li>
                 <a className='col s2' href={`/users/${user.id}`}>{user.username}</a>
