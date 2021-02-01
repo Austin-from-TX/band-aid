@@ -9,7 +9,6 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 
 1. [Node.js](https://nodejs.org/)
 1. [React](https://reactjs.org/)
-1. [React-Router](https://reactrouter.com/)
 1. [Redux](https://redux.js.org/)
 1. [PureCSS](https://purecss.io/)
 
@@ -25,16 +24,6 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 1. [PostgresQL](https://www.postgresql.org/)
 1. [Sequelize](https://sequelize.org/master/)
 
-## Local Environment Setup
-
-The following are instructions for setting the project up to run locally on Windows WSL2.
-
-### Installing Dependencies
-
-1. Install Windows WSL2
-1. Install Postgres for Windows and confirm access to Postgres in WSL2 Ubunutu using `psql -h localhost -U postgres postgres` in bash
-1. Install Node and npm for WSL2 Ubuntu
-1. `npm i -g sequelize-cli dotenv-cli` on Ubuntu to globally install environment and migration toolsets
 
 ### Clone Codebase
 
