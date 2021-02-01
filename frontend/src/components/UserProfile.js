@@ -5,6 +5,10 @@ import { useEffect, useState } from 'react'
 import TrackPlayer from './TrackPlayer';
 import { Redirect, useParams } from 'react-router-dom'
 import Mp3Recorder from './MP3Recorder';
+import UploadModal from './UploadTrack/UploadModal';
+import { getUserById } from '../store/users';
+import UserName from './UserName';
+import { getAllTracks } from '../store/tracks';
 
 function UserProfile(){
     const dispatch = useDispatch()
@@ -12,9 +16,24 @@ function UserProfile(){
     const user = useSelector(state => state.session.user)
     
     // TODO render profile name based on userId 
-    // useEffect(() => {
-    //     dispatch(getUserById(userId))
-    // }, [dispatch, userId])
+    const user2 = useSelector(state => state.users.username)
+    
+    const [userName, setUserName] = useState()
+
+    useEffect(() => {
+        dispatch(getUserById(userId)).then(user2 => {
+            setUserName(user2)
+        })
+    }, [dispatch, userId])
+    
+    //Grab user Tracks
+    const tracks = useSelector((state) => Object.values(state.tracks))
+    
+
+    useEffect(() => {
+        dispatch(getAllTracks(userId))
+    }, [dispatch, userId])
+
        
     if(!user) return <Redirect to='/' />
         return (
@@ -39,8 +58,8 @@ function UserProfile(){
                     <Tracks userId={userId}/>
                         {Number(user.id) === Number(userId) ?
                             <>
-                                <p>Have an inkling for a song? Record it here! Once finished, click the three<br />
-                                dots to download the track and then upload it here to share with others!</p>
+                                <p>Have an inkling for a song? Record it here to upload it straight to your <br />
+                                playlist! Already have a recording ready of your own? <a> <UploadModal /></a> here</p>
                               <Mp3Recorder />
                               <TrackPlayer />
                             </> :

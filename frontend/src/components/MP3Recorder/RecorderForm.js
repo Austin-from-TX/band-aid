@@ -8,17 +8,13 @@ function RecorderForm ({ track }) {
       const user= useSelector((state) => state.session.user) //TODO pass userId to route 
       const userId= useSelector((state) => state.session.user.id) //TODO pass userId to route 
       
-      console.log('from the modal -----', track)
+      
       const [bandName, setBandName] = useState(user.username)
       const [title, setTitle] = useState(track.name)
       // const [track, setTrack] = useState('')
       const [errors, setErrors] = useState([])
       
-      // useEffect(() => {
-      //   setTrack(file)
-      // },[file])
-            
-      console.log( bandName, userId, title, track)
+     
       const handleSubmit = async (e) => {
             e.preventDefault()
             let newErrors = []

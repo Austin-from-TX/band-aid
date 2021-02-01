@@ -4,6 +4,13 @@ const initialState = {}
 
 const GET_USERS = 'users/getUsers'
 
+const GET_NAME = 'users/getUserName'
+
+
+const getUserName = (userName) => ({
+    type: GET_NAME, 
+    payload: userName
+})
 
 const getUsers = (users) => ({
     type: GET_USERS,
@@ -17,7 +24,11 @@ export const getAllUsers = () =>  async (dispatch) => {
     dispatch(getUsers(users))    
 }
 
-export const getUserById = () => async (dispatch) => {
+export const getUserById = (userId) => async (dispatch) => {
+    const res = await fetch(`/api/users/${userId}`, {})
+
+    const userName = await res.json()
+    dispatch(getUserName(userName))
     
 }
 
@@ -27,7 +38,9 @@ function usersReducer (state = initialState, action) {
         case GET_USERS:
             newState = Object.assign({}, state, action.payload)
             return newState
-
+        case GET_NAME:
+            newState = Object.assign({}, state, action.payload)
+            return newState
         default:
             return initialState
     }

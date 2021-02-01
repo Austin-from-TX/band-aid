@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllUsers } from '../store/users';
+import avatar from '../lib/avater1.png'
 
 const SearchUsers = () => {
 
@@ -29,9 +30,26 @@ const SearchUsers = () => {
             <div>
                 <ul>
                     {userList.map(user => (
-                        <li key={user.id}>
-                            <Link to={`/users/${user.id}`}>{user.username}</Link>
-                        </li>
+                        <Link to={`/users/${user.id}`}>
+                        <div className='row 'style={{marginLeft: '400px'}}>
+                          <div class="col s12 m8" key={user.id}>
+                            <div class="card horizontal">
+                            <div class="card-image">
+                              <img src={avatar} className='circle responsive-img' alt="avatar" style={{height: '120px', width: '120px'}}></img>
+                            </div>
+                            <div class="card-stacked">
+                              <div class="card-action">
+                              <h5 >{user.username}</h5>
+                              </div>
+                              <div class="card-content">
+                                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                        </Link>
+    
                     ))}
                 </ul>
             </div>

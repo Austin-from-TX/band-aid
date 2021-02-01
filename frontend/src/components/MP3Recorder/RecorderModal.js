@@ -4,8 +4,7 @@ import { useState } from 'react'
 
 
 function RecorderModal ({ track }) {
-
-    console.log('from the modal -----', track)
+    
     const [showModal, setShowModal] = useState(false)
 
     return (
