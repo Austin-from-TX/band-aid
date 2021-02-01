@@ -53,6 +53,15 @@ router.post(
         const users = await User.findAll()
         return res.json(users)
     }))
+  
+  router.get(`/:id(\\d+)`, 
+    asyncHandler(async (req, res) => {
+
+        const id  = Number.parseInt(req.params.id)  
+        console.log(id)   
+        const user = await User.findByPk(id)
+        return res.json(user)
+    }))
 
 
 module.exports = router;
