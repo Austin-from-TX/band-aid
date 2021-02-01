@@ -10,7 +10,7 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 1. [Node.js](https://nodejs.org/)
 1. [React](https://reactjs.org/)
 1. [Redux](https://redux.js.org/)
-1. [PureCSS](https://purecss.io/)
+1. [Materialize CSS](https://materializecss.com/)
 
 #### MiddleWare
 
