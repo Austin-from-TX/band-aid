@@ -1,6 +1,6 @@
 import MicRecorder from 'mic-recorder-to-mp3';
 import { useState, useEffect } from 'react';
-import RecorderForm from './RecorderForm';
+import RecorderModal from './RecorderModal';
 
 const recorder = new MicRecorder({ bitRate: 128 });
 
@@ -29,12 +29,14 @@ function Mp3Recorder() {
                  setMp3Url(URL.createObjectURL(blob))
                  setIsRecording(false)
 
-                 //TODO:  following code to POST to backend upload route 
+                //  TODO:  following code to POST to backend upload route 
                  
-                //  setTrack([new File(buffer, `Audio-Recording[${Date.now()}]`, {
-                //      type: blob.type, 
-                //      lastModified: Date.now()
-                //  })] )
+                 setTrack(new File(buffer, `Audio-Recording[${Date.now()}]`, {
+                     type: blob.type, 
+                     lastModified: Date.now()
+                 }) )
+
+                console.log('from the recorder', track)
 
          }).catch((e) => {
              alert('We could not retrieve your recording')
@@ -59,7 +61,7 @@ function Mp3Recorder() {
                {!isRecording ? <button className='btn btn-header cyan darken-4 text-lighten-5' style={{marginBottom: '45px' }} onClick={start} >Record</button> :
                <button className='btn btn-header red darken-3 text-lighten-5' style={{marginBottom: '45px' }} onClick={stop} >Stop</button>} 
                 <audio src={mp3Url} controls="controls" />
-                {track && <RecorderForm track={track}/>}
+                {track && <RecorderModal track={track}/>}
             </header>
         </div>
     )

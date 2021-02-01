@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { createTrack } from '../../store/upload'
+import * as trackActions from '../../store/upload'
     
 
 function RecorderForm ({ track }) {
@@ -8,18 +8,21 @@ function RecorderForm ({ track }) {
       const user= useSelector((state) => state.session.user) //TODO pass userId to route 
       const userId= useSelector((state) => state.session.user.id) //TODO pass userId to route 
       
-    
+      console.log('from the modal -----', track)
       const [bandName, setBandName] = useState(user.username)
-      const [title, setTitle] = useState(track[0].name)
-      // const [track, setTrack] = useState()
+      const [title, setTitle] = useState(track.name)
+      // const [track, setTrack] = useState('')
       const [errors, setErrors] = useState([])
       
+      // useEffect(() => {
+      //   setTrack(file)
+      // },[file])
             
       console.log( bandName, userId, title, track)
       const handleSubmit = async (e) => {
             e.preventDefault()
             let newErrors = []
-            dispatch(createTrack({ bandName, userId, title, track,  }))
+            dispatch(trackActions.createTrack({ bandName, userId, title, track,  }))
             .then(() => {
               setBandName("");
               setTitle("");
@@ -60,7 +63,7 @@ function RecorderForm ({ track }) {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </label>
-             <button type="submit">Upload Track</button>
+             <button className='btn btn-header cyan darken-4 modal-trigger text-lighten-5' type="submit">Upload Track</button>
           </form>
           
         </div>

@@ -14,7 +14,6 @@ export const createTrack = (trackFile) => async (dispatch) => {
 
     
     const { tracks, track, bandName, title, userId } = trackFile
-    console.log('from the thunk!  --- ', track[0])
     const formData = new FormData();
     formData.append('userId', userId)
     formData.append('bandName', bandName)
@@ -41,7 +40,6 @@ export const createTrack = (trackFile) => async (dispatch) => {
      dispatch(setTrack(res.data.trackFile))
      return res.data.trackFile
 }
-
 
 
 const initialState = { track: null }
