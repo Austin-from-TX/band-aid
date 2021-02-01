@@ -8,7 +8,7 @@ import * as sessionActions from "./store/session";
 import UserProfile from './components/UserProfile'
 import { Switch, Route, useParams } from "react-router-dom";
 import SearchUsers from "./components/SearchUsers";
-import OtherProfile from "./components/OtherProfile";
+
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
     <Route path={`/users/:userId`}>
       <UserProfile /> 
     </Route>
-    <Route exact path='/users'>
+    <Route exact path={'/users'}>
       <SearchUsers />
     </Route>
     

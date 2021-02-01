@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import  UploadModal  from '../UploadTrack/UploadModal.js'
 import * as sessionActions from '../../store/session';
 import * as M from 'materialize-css'
@@ -46,17 +46,17 @@ function ProfileButton({ user }) {
                  <UploadModal />
               </li>
               <li>
-                <a href="/users">Find BandMates</a>
+                <Link to="/users">Find BandMates</Link>
               </li>
             <li>
-                <a className='col s2' href={`/users/${user.id}`}>{user.username}</a>
+                <Link className='col s2' to={`/users/${user.id}`}>{user.username}</Link>
             </li>
             <li>
-                <a> <i className="fas fa-user arrow_drop_down"></i></a>
+                <Link> <i className="fas fa-user arrow_drop_down"></i></Link>
             </li>
             <li>
-                <a className='white-text' href='#' onClick={logout}>Log Out
-                </a>
+                <Link className='white-text' to='#' onClick={logout}>Log Out
+                </Link>
             </li>
           </ul>
       </>

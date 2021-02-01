@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getAllUsers } from '../store/users';
 
 const SearchUsers = () => {
@@ -29,7 +30,7 @@ const SearchUsers = () => {
                 <ul>
                     {userList.map(user => (
                         <li key={user.id}>
-                            <a href={`/users/${user.id}`}>{user.username}</a>
+                            <Link to={`/users/${user.id}`}>{user.username}</Link>
                         </li>
                     ))}
                 </ul>

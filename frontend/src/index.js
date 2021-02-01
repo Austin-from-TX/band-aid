@@ -23,11 +23,11 @@ if (process.env.NODE_ENV !== "production") {
 function Root() {
   return (
     <ReduxProvider store={store}>
-      <ModalProvider>
         <BrowserRouter>
-          <App />
+          <ModalProvider>
+            <App />
+          </ModalProvider>
         </BrowserRouter>
-      </ModalProvider>
     </ReduxProvider>
   );
 }

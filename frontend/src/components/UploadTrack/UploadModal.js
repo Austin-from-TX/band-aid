@@ -1,6 +1,7 @@
 import UploadTrack from './index'
 import { Modal } from '../../context/Modal'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 function UploadModal () {
@@ -9,7 +10,7 @@ function UploadModal () {
 
     return (
         <>
-        <a href="#upload"  onClick={() => setShowModal(true)}>Upload Track</a>
+        <Link href="#upload"  onClick={() => setShowModal(true)}>Upload Track</Link>
         {showModal && (  
           <Modal onClose={() => setShowModal(false)}>
               <UploadTrack />

@@ -3,6 +3,7 @@ import bg from '../../lib/guitar-track.jpeg';
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import SignupModal from "../SignupForm/SignupModal";
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -36,9 +37,9 @@ function Header() {
           <h6 className='font'>
             <b>Start Rocking Today</b>
           </h6>
-          <a href='#signup' className='btn btn-header cyan darken-4 modal-trigger text-lighten-5' style={{color: 'white'}}>
+          <Link to='#signup' className='btn btn-header cyan darken-4 modal-trigger text-lighten-5' style={{color: 'white'}}>
             <SignupModal />
-          </a>
+          </Link>
         </div>
              
     </div>

@@ -7,6 +7,7 @@ import SignupModal from "../SignupForm/SignupModal";
 import { useEffect } from 'react'
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
+import { Link } from "react-router-dom";
 
 function NavBar ({ isLoaded }) {
 
@@ -24,17 +25,17 @@ function NavBar ({ isLoaded }) {
             <nav className='nav z-depth-0' >
                 <div className="nav-wrapper blue-grey darken-4">
                     
-                    <a href="#logo" className="brand-logo"><img className='brand-logo'src={icon} style={{ margin: '5px', width: '60px', height: '60px'}}></img>
+                    <Link to="/" className="brand-logo"><img className='brand-logo'src={icon} style={{ margin: '5px', width: '60px', height: '60px'}}></img>
                         <span style={{marginLeft: '75px'}}>BandAid</span>
-                    </a>
+                    </Link>
                     <ul className="right hide-on-med-and-down">
                         {sessionUser ? (<li><ProfileButton user={sessionUser} /></li>) :
                         (<>
-                        <li><a href='#login' className='btn btn-nav transparent z-depth-0 '><LoginFormModal /></a></li>
+                        <li><a href='/login' className='btn btn-nav transparent z-depth-0 '><LoginFormModal /></a></li>
                         <li><a href='#signup'className='btn btn-nav transparent z-depth-0 '>  <SignupModal /></a></li>
                         </>)}
                     </ul>
-                    <a href="#menu" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    <Link to="#menu" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
                 </div>
             </nav>
 
