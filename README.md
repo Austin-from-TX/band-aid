@@ -30,19 +30,27 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 1. `git clone https://github.com/Austin-from-TX/band-aid.git` to clone this repo to a new directory "band-aid"
 1. `cd band-aid` to navigate to the project root
 1. `git checkout -b development-<your-name>` to setup a your own branch for development
-1. `git push origin development-<your-name>` when your code is ready for merging
+
+### Setting up Backend and Database
+1. `cd backend` and run `npm install`
+1. Create a new database user "bandaid_app" with a password of your choosing; grant CREATEDB to "bandaid_app
+1. Copy `example.env` to `.env` and update with your Postgres user information and a new secret.  Do not worry about the AWS keys for now.
+1. **Double check your new `'env` file is contained in your `.gitignore` file**
+1. `npx dotenv sequelize db:create`from `backend` root folder to create the database with the Postgres user
+1. Run `npm start` to run backend server
+
+### Setting Up Frontend Environment
+1. Open second terminal to `cd ./frontend` and run `npm install`
+1. Run `npm start`again from `frontend` root to start React server
+1. If it does not open automatically, open a new browser window and navigate to `localhost:3000'
+1. Project should now be up and running 
+
+### Developing 
+1. Open a third terminal from which you can do and commit your work 
+1. If not already in VSCode, `cd` back into project root and run `code .` to open the project in your editor
+1. `git push origin development-<your-name>` when your code is ready for commiting
 1. Create a pull request for your commited changes 
 
 **IMPORTANT**: Do **NOT** do any development work in `main` branch!! Do **NOT** push changes to `main`! Always do your work in a personal branch.  
 
-
-### NPM and Database Setup
-
-1. `npm i` in project root to install node_modules
-1. Create a new database user "bandaid_app" with a password of your choosing; grant CREATEDB to "bandaid_app"
-1. Copy `./.env.example` to `./.env` and update with your Postgres user information
-1. `npx dotenv sequelize db:create` in project root to create the database with the Postgres user
-1. `npm run dev` to check to see if the Postgres connection is successful; should show "running on port... [port]" in your Ubuntu bash
-
-At this point you should be able to use `code .` in bash in the project root to open VS Code.
 
