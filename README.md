@@ -35,15 +35,15 @@ BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/
 1. `cd backend` and run `npm install`
 1. Create a new database user "bandaid_app" with a password of your choosing; grant CREATEDB to "bandaid_app
 1. Copy `example.env` to `.env` and update with your Postgres user information and a new secret.  Do not worry about the AWS keys for now.
-1. **Double check your new `'env` file is contained in your `.gitignore` file**
-1. `npx dotenv sequelize db:create`from `backend` root folder to create the database with the Postgres user
-1. Run `npm start` to run backend server
+1. **Double check your new `.env` file is contained in your `.gitignore` file**
+2. Run `npx dotenv sequelize db:create`from `band-aid/backend` to create the database with the Postgres user
+3. Run `npm start` to run backend server
 
 ### Setting Up Frontend Environment
-1. Open second terminal to `cd ./frontend` and run `npm install`
-1. Run `npm start`again from `frontend` root to start React server
-1. If it does not open automatically, open a new browser window and navigate to `localhost:3000'
-1. Project should now be up and running 
+1. Open second terminal to `cd ../frontend` and run `npm install`
+2. Run `npm start`again from `band-aid/frontend` to start React server
+3. If it does not open automatically, open a new browser window and navigate to `localhost:3000'
+4. Project should now be up and running 
 
 ### Developing 
 1. Open a third terminal from which you can do and commit your work 
