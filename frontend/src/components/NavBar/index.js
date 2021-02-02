@@ -1,6 +1,7 @@
  
 import { useSelector } from "react-redux";
 import LoginFormModal from "../LoginFormModal";
+import DemoLoginModal from "../LoginFormModal/DemoLoginModal";
 import ProfileButton from "../ProfileButton/ProfileButton";
 import icon from '../../lib/logo1.png'
 import SignupModal from "../SignupForm/SignupModal";
@@ -31,6 +32,7 @@ function NavBar ({ isLoaded }) {
                     <ul className="right hide-on-med-and-down">
                         {sessionUser ? (<li><ProfileButton user={sessionUser} /></li>) :
                         (<>
+                        <li><a href='/login' className='btn btn-nav transparent z-depth-0 '><DemoLoginModal /></a></li>
                         <li><a href='/login' className='btn btn-nav transparent z-depth-0 '><LoginFormModal /></a></li>
                         <li><a href='#signup'className='btn btn-nav transparent z-depth-0 '>  <SignupModal /></a></li>
                         </>)}
