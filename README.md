@@ -1,7 +1,8 @@
 # band-aid
 BandAid is a unique take on the popular [BandCamp](https://bandcamp.com) web app. BandAid users will be able to login and share audio files that will be available for live streaming by other users. More information will be provided in this wiki throughout project development. 
 
-BandAid is hosted on Heroku at https://band-aid-react.herokuapp.com/  
+BandAid is hosted on Heroku at [BandAid](https://dashboard.heroku.com/apps/band-aid-react-redux)
+** to login without signing up please use the Demo login button **
 
 ## Technologies Used
 
