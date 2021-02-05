@@ -10,29 +10,29 @@ module.exports = {
 
       return queryInterface.bulkInsert('Feedbacks', [
         
-       { userId: user[0].id,
-         trackId: tracks[0].id,
-         comment: "this song is bonkers",
-         createdAt: new Date(),
-         updatedAt: new Date(),
-        },
+      //  { userId: user[0].id,
+      //    trackId: tracks[0].id,
+      //    comment: "this song is bonkers",
+      //    createdAt: new Date(),
+      //    updatedAt: new Date(),
+      //   },
 
-        { userId: user[1].id,
-          trackId: tracks[1].id,
-          comment: "this song is baller",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-         },
+      //   { userId: user[1].id,
+      //     trackId: tracks[1].id,
+      //     comment: "this song is baller",
+      //     createdAt: new Date(),
+      //     updatedAt: new Date(),
+      //    },
 
-         { userId: user[2].id,
-          trackId: tracks[2].id,
-          comment: "what a tuuuuune",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-         },
+      //    { userId: user[2].id,
+      //     trackId: tracks[2].id,
+      //     comment: "what a tuuuuune",
+      //     createdAt: new Date(),
+      //     updatedAt: new Date(),
+      //    },
        
         
-      ], {});
+      // ], {});
   },
 
   down: (queryInterface, Sequelize) => {
