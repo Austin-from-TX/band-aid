@@ -39,7 +39,7 @@ module.exports = {
       feedback: {
         type: Sequelize.TEXT, 
         allowNull: true ,
-        // references: { model: "Feedbacks"} 
+        references: { model: "Feedbacks"} 
       },
       createdAt: {
         allowNull: false,
