@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     feedback: {
        type: DataTypes.TEXT, 
        allowNull: true
-       references: { model: "Feedbacks", key: "id" }
+      //  references: { model: "Feedbacks", key: "id" }
     }
   }, {});
   Track.associate = function(models) {
